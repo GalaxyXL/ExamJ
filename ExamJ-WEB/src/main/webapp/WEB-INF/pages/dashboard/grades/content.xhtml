@@ -1,0 +1,24 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <script>$("#grades-manage-nav").addClass('active')</script>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <h3 style="margin-top: 10px">成绩管理</h3>
+        <div class="dropdown-divider"></div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">试卷</a>
+                    <a class="dropdown-item" href="#">用户</a>
+                </div>
+            </div>
+            <input type="text" class="form-control" aria-label="Text input with dropdown button" />
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">搜索</button>
+            </div>
+        </div>
+    </main>
+</ui:composition>

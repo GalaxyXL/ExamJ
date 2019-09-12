@@ -1,0 +1,23 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+    <script>$("#info-nav").addClass('active')</script>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <h3 style="margin-top: 10px">个人中心</h3>
+        <div class="dropdown-divider"></div>
+        <form>
+            <fieldset>
+                <div class="form-group">
+                    <label for="disabledEmailInput">Email</label>
+                    <input type="text" disabled="disabled" id="disabledEmailInput" class="form-control" placeholder="Email" />
+                </div>
+                <div class="form-group">
+                    <label for="disabledEmailInput">电话</label>
+                    <input type="text" disabled="disabled" id="disabledPhoneInput" class="form-control" placeholder="电话" />
+                </div>
+                <button type="button" class="btn btn-warning">更改信息</button>
+                <button type="button" class="btn btn-primary">提交更改</button>
+            </fieldset>
+        </form>
+    </main>
+</ui:composition>

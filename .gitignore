@@ -1,0 +1,7 @@
+# Project exclude paths
+/ExamJ-EJB/target/
+/ExamJ-EJB-API/target/
+/ExamJ-Model/target/
+/ExamJ-WEB/target/
+/out/
+/Test/target/

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: galaxyxl
+  Date: 2019/9/9
+  Time: 19:50
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <ui:insert name="head"><ui:include src="../head.xhtml"/></ui:insert>
+    <h:outputStylesheet library="css" name="signin.css"/>
+</h:head>
+
+<h:body>
+    <h:form styleClass="form-signin container-fluid">
+        <h1 class="h3 mb-3 font-weight-normal">注册</h1>
+        <div class="form-group">
+            <h:outputLabel for="inputUserName" value="用户名"/>
+            <h:inputText validator="#{userBean.validateUsername}" value="#{userBean.user.name}" styleClass="form-control" id="inputUserName"/>
+            <h:message for="inputUserName" style="color: red" />
+        </div>
+        <div class="form-group">
+            <h:outputLabel for="inputPassword" value="密码"/>
+            <h:inputSecret validator="#{userBean.validatePassword}" value="#{userBean.user.password}" styleClass="form-control" id="inputPassword">
+                <f:ajax event="blur"/>
+            </h:inputSecret>
+            <h:message for="inputPassword" style="color: red" />
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel for="inputEmail" value="E-mail"/>
+            <h:inputText validator="#{userBean.validateEmail}" value="#{userBean.user.email}" styleClass="form-control" id="inputEmail"/>
+            <h:message for="inputEmail" style="color: red" />
+        </div>
+        <div class="form-group">
+            <h:outputLabel for="inputPhone" value="电话"/>
+            <h:inputText value="#{userBean.user.phone}" styleClass="form-control" id="inputPhone"/>
+        </div>
+        <h:commandButton action="#{userBean.register}" styleClass="btn btn-lg btn-primary btn-block" value="注册"/>
+    </h:form>
+</h:body>
+
+</html>

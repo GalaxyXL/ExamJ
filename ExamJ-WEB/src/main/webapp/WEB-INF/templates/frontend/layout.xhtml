@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: galaxyxl
+  Date: 2019/9/5
+  Time: 21:34
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=utf-8"/>
+    <title><ui:insert name="title">ExamJ</ui:insert></title>
+    <ui:insert name="head"><ui:include src="../head.xhtml"/></ui:insert>
+    <h:outputStylesheet library="css" name="dashboard.css"/>
+</h:head>
+
+<h:body>
+
+    <ui:insert name="header"><ui:include src="header.xhtml"/></ui:insert>
+    <ui:insert name="sidebar">
+        <div><ui:include src="sidebar.xhtml"/></div>
+    </ui:insert>
+    <ui:insert name="content" />
+
+
+</h:body>
+
+</html>

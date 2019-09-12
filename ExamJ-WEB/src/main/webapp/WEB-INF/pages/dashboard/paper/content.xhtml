@@ -1,0 +1,29 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+    <script>$("#paper-manage-nav").addClass('active')</script>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <h3 style="margin-top: 10px">试卷管理</h3>
+        <div class="dropdown-divider"></div>
+        <div class="row">
+            <div class="card" style="width: 18rem; margin: 10px">
+                <div class="card-body">
+                    <h5 class="card-title">CET4</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">English</h6>
+                    <p class="card-text">College English Test Band 4</p>
+                    <h:link styleClass="card-link" outcome="examination">编辑试卷</h:link>
+                    <h:link styleClass="card-link text-danger" outcome="examination">删除试卷</h:link>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem; margin: 10px">
+                <div class="card-body">
+                    <h5 class="card-title">CET4</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">English</h6>
+                    <p class="card-text">College English Test Band 4</p>
+                    <h:link styleClass="card-link" outcome="examination">编辑试卷</h:link>
+                    <h:link styleClass="card-link text-danger" outcome="examination">删除试卷</h:link>
+                </div>
+            </div>
+        </div>
+    </main>
+</ui:composition>

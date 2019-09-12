@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+    <main role="main" class="container" style="margin-bottom: 50px">
+        <div class="row justify-content-center">
+            <h2>#{examBean.paper.title}</h2>
+        </div>
+
+            <c:set var="end" value="\n"/>
+            <div class="row justify-content-center">
+                <div class="container w-75">
+                    <c:forEach items="#{examBean.questions}" var="question" varStatus="status">
+                        <c:set var="array" value="#{fn:split(question.title, end)}"/>
+                        <div class="row">
+                            ${status.index + 1}. #{array[0].substring(0, array[0].length() - 1)}
+                        </div>
+                        <div class="row">
+                            <c:choose>
+                                <c:when test="#{question.type eq 2}">
+                                    <h:inputTextarea
+                                            value="#{examBean.answerUserPaperQuestions.get(status.index).answer}"
+                                            styleClass="text-input w-100"/>
+                                </c:when>
+                                <c:when test="#{question.type eq 1}">
+                                    <c:set var="options" value="#{fn:split(array[1], '\\t')}"/>
+                                    <h:selectOneRadio>
+                                        <c:forEach items="#{options}" var="option" varStatus="o_status">
+                                            <div class="form-check form-check-inline col">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions#{status.index}" id="option#{status.index}_#{o_status.index}"
+                                                       value="#{option}"/>
+                                                <label class="form-check-label" for="option#{status.index}_#{o_status.index}">#{option}</label>
+                                            </div>
+                                        </c:forEach>
+                                    </h:selectOneRadio>
+                                </c:when>
+                            </c:choose>
+                        </div>
+                    </c:forEach>
+                </div>
+            </div>
+
+    </main>
+</ui:composition>

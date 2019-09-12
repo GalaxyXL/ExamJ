@@ -1,0 +1,25 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+    <div>
+        <div class="container mt-auto py-3"></div>
+        <footer class="footer-footer fixed-bottom mt-auto py-3">
+            <div class="row">
+                <span class="col d-flex justify-content-center w-100 text-muted">#{examBean.paper.title}
+                </span>
+                <span class="col d-flex justify-content-center w-100 text-muted">
+
+                        <h:commandButton  type="submit" action="#{paperBean.submitPaper(examBean.answerUserPaperQuestions)}" class="btn btn-danger btn-sm" value="提交试卷">
+                            <f:param name="pid" value="#{examBean.paper.id}" />
+                        </h:commandButton>
+
+                </span>
+                <span class="col d-flex justify-content-center w-100 text-muted">剩余时间
+                </span>
+
+            </div>
+
+        </footer>
+    </div>
+</ui:composition>
